@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Task 3 - To-Do Web App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Main Container -->
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <header>
+
+            <h1>My To-Do List</h1>
+
+            <p>
+                Organize your tasks and stay productive
+            </p>
+
+        </header>
+
+
+        <!-- Add Task Section -->
+
+        <section class="task-input">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task..."
+            >
+
+            <input
+                type="date"
+                id="dateInput"
+            >
+
+            <select id="priorityInput">
+
+                <option value="Low">
+                    Low Priority
+                </option>
+
+                <option value="Medium">
+                    Medium Priority
+                </option>
+
+                <option value="High">
+                    High Priority
+                </option>
+
+            </select>
+
+            <button onclick="addTask()">
+                Add Task
+            </button>
+
+        </section>
+
+
+        <!-- Search and Filter -->
+
+        <section class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search tasks..."
+                onkeyup="displayTasks()"
+            >
+
+
+            <select
+                id="filterInput"
+                onchange="displayTasks()"
+            >
+
+                <option value="all">
+                    All Tasks
+                </option>
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="completed">
+                    Completed
+                </option>
+
+            </select>
+
+
+            <select
+                id="priorityFilter"
+                onchange="displayTasks()"
+            >
+
+                <option value="all">
+                    All Priorities
+                </option>
+
+                <option value="High">
+                    High
+                </option>
+
+                <option value="Medium">
+                    Medium
+                </option>
+
+                <option value="Low">
+                    Low
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- Statistics -->
+
+        <section class="statistics">
+
+            <div class="stat-card">
+
+                <h3 id="totalTasks">
+                    0
+                </h3>
+
+                <p>Total Tasks</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="pendingTasks">
+                    0
+                </h3>
+
+                <p>Pending</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="completedTasks">
+                    0
+                </h3>
+
+                <p>Completed</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Task List -->
+
+        <section>
+
+            <div id="taskList">
+
+                <!-- Tasks will appear here -->
+
+            </div>
+
+        </section>
+        <!-- Clear Completed -->
+
+        <div class="bottom-section">
+
+            <button
+                class="clear-btn"
+                onclick="clearCompleted()"
+            >
+                Clear Completed Tasks
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
